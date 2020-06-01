@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+<style type="text/css">
+    table td:nth-child(1) {
+        vertical-align: top;
+        color: blue;
+    }
+</style>
+<body>
+
+{% load static %}
+{%if album %}
+<h2><a href="{{request.META.HTTP_REFERER|escape}}">Trở Về</a></h2>
+    <div>
+    <table style="width: 100%">
+        <tr>
+            <td>
+                <div>
+            <img src="{% static '/trangSuc2/img/' %}{{ album.hinh }}" height="400">
+                </div>
+            </td>
+            {{ album.ten }}
+            <br><br>
+            <p style="color: darkgoldenrod">{{ album.gia }}</p>
+            <td valign="top">
+    <table>
+        <tr>
+            <td width="140" >
+                Bộ Sưu Tập:
+            </td>
+            <td>
+                {{ album.boSuuTap }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Nhóm:
+            </td>
+            <td>
+                {{ album.nhom }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Loại:
+
+            </td>
+            <td>
+                    {{ album.loai }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Màu đá chính:
+
+            </td>
+            <td>
+                    {{ album.mauDaChinh }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Loại đá chính:
+            </td>
+            <td>
+                {{ album.loaiDaChinh }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Hình dạng đá:
+            </td>
+            <td>
+                {{ album.hinhDangDa }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Thông tin sản phẩm:
+            </td>
+            <td>
+                {{ album.thongTinSP }}
+            </td>
+        </tr>
+    </table>
+            </td>
+        </tr>
+
+    </table>
+</div>
+{% else %}
+<h3> Không có sản phẩm</h3>
+
+{% endif %}
+</body>
+</html>
